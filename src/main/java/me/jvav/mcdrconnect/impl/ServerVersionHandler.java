@@ -8,15 +8,14 @@ import net.minecraft.server.MinecraftServer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ServerVersionHandler implements IHandler {
     @Override
     public @NotNull String handle(MinecraftServer server, String data) {
-        return TheMod.GSON.toJson(new HashMap<String, String>() {
-            {
-                put("version", SharedConstants.getCurrentVersion().getId());
-                put("semver", FabricLoader.getInstance().getModContainer("minecraft").orElseThrow().getMetadata().getVersion().getFriendlyString());
-            }
-        });
+        Map<String, String> map = new HashMap<>();
+        map.put("version", SharedConstants.getCurrentVersion().getId());
+        map.put("semver", FabricLoader.getInstance().getModContainer("minecraft").orElseThrow().getMetadata().getVersion().getFriendlyString());
+        return TheMod.GSON.toJson(map);
     }
 }
