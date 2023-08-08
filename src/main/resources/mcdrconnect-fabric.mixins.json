@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "me.jvav.mcdrconnect.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "CommandsMixin",
+    "CommandSourceStackAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

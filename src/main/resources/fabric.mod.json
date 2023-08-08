@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "mcdrconnect-fabric",
+	"version": "${version}",
+	"name": "MCDRConnect-Fabric",
+	"description": "Connecting to your MCDR",
+	"authors": [
+		"Huaji_MUR233"
+	],
+	"license": "MPL-2.0",
+	"icon": "assets/mcdrconnect-fabric/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"me.jvav.mcdrconnect.TheMod"
+		]
+	},
+	"mixins": [
+		"mcdrconnect-fabric.mixins.json"
+	],
+	"depends": {
+		"minecraft": ">=1.19",
+		"java": ">=17"
+	}
+}
